@@ -25,5 +25,22 @@ best_day=np.argmax(study_minus_games)
 worst_day=np.argmin(study_minus_games)
 print("Best day (Study - Games):",best_day)
 print("Worst day (Study - Games):",worst_day)
+names=["Chat","Video","Study","Games"]
+winners=[]
 
-
+for i in range(len(chat)):
+    day_values=[chat[i],video[i],study[i],games[i]]
+    best=0
+    for j in range(1,4):
+        if day_values[j]>day_values[best]:
+            best=j
+winners.append(names[best])
+app_totals=chat+video+study+games
+chat_share=(chat/app_totals)*100
+video_share=(video/app_totals)*100
+study_share=(study/app_totals)*100  
+games_share=(games/app_totals)*100
+print(chat_share[1])
+print(video_share[1])
+print(study_share[1])
+print(games_share[1])
